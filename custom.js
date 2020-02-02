@@ -1,60 +1,60 @@
   $(document).ready(function(){
 
-  $("#bttn1").click(function(){
-    $("#box1").css("height","300px");  //Q1. set Height to 300px
+  $(".section1 button").click(function(){
+    $(".section1 div").css("height","300px");  //Q1. set Height to 300px
   });
 
-  $("#bttn2").click(function(){
-    $("#box2").css({"margin-left":"400px","transition":"5s"}); //Q2. set div to left with transition
+  $(".section2 button").click(function(){
+    $(".section2 div").css({"margin-left":"400px","transition":"5s"}); //Q2. set div to left with transition
   });
 
-  $("#bttn3").click(function(){
-    $("#box3 p:eq(1)").css({"width":"max-content"});//Q4  Wrap second paragraph
+  $(".section5 button").click(function(){
+    $(".section5 p:eq(1)").wrap("<div class='hello'></div>");//Q4  Wrap second paragraph
   });
 
-  $("#bttn4").click(function(){
-    $("#bttn4").attr("disabled", true); //Q5. button click change input field value and disable the button
-      $("#test3").val("hello");
+  $(".section9 button").click(function(){
+    $(".section9 button").attr("disabled", true); //Q5. button click change input field value and disable the button
+      $(".section9 input").val("hello");
   });
 
-  $("#bttn5").click(function(){
-    $("#box5 p:not(.intro)").css({"background-color":"transparent"});//Q5 remove background color from p tage which one don't have any class
+  $(".section6").click(function(){
+    $(".section6 p:not(.intro)").css({"background-color":"transparent"});//Q5 remove background color from p tage which one don't have any class
   });
 
-  $("#bttn6").click(function(){
-    $("#list1 li").filter(':nth-child(4), :nth-child(5), :nth-child(6)').css({"background-color":"orange"});//Q6  add background color inside 4, 5 and 6
+  $(".section7 button").click(function(){
+    $(".section7 li").filter(':nth-child(4), :nth-child(5), :nth-child(6)').css({"background-color":"orange"});//Q6  add background color inside 4, 5 and 6
   });
 
-  $("#bttn7").click(function(){
-    $("#list2 li:not(:nth-child(1)").css({"border-color":"red"});//Q7. except 1 add border color to all element
+  $(".section8 button").click(function(){
+    $(".section8 li:not(:nth-child(1)").css({"border-color":"red"});//Q7. except 1 add border color to all element
   });
 
-  $("#bttn9").click(function(){     //Q8. click on tab button content section need to be change
-    $("#fr").css({"display":"none"});
-    $("#sr").css({"display":"block"});
+  $(".tabcontent :eq(0)").click(function(){    //Q8. click on tab button content section need to be change
+    $(".content").css({"display":"none"});
+    $(".active").css({"display":"block"});
   });
-  $("#bttn8").click(function(){
-    $("#fr").css({"display":"block"});
-    $("#sr").css({"display":"none"});
+  $(".tabcontent :eq(1)").click(function(){
+    $(".content").css({"display":"block"});
+    $(".active").css({"display":"none"});
   });
 
-  $("#bttn10").click(function(){       //Q9.  button click back to top with smooth scroll
+  $(".section10").click(function(){       //Q9.  button click back to top with smooth scroll
     $("html").animate({ scrollTop: 0 }, 4000);
   });
 
-  mybutton = document.getElementById("box4"); //Q3.  display fixed and relative
+  var mybutton = document.getElementsByClassName("full"); //Q3.  display fixed and relative
     // alert("hello");
   window.onscroll = function() {scrollFunction(); };
   function scrollFunction() {
     // alert(document.documentElement.scrollTop );
     if (document.documentElement.scrollTop >= 700 && document.documentElement.scrollTop  <= 900 ){
       // alert("700 $$ 900");
-      mybutton.style.position = "fixed";
-      mybutton.style.top = 0;
-      mybutton.style.width = "100%";
+      mybutton[0].style.position = "fixed";
+      mybutton[0] .style.top = 0;
+      mybutton[0] .style.width = "100%";
 
     } else if(document.documentElement.scrollTop  > 900 || document.documentElement.scrollTop  < 700) {
-      mybutton.style.position = "relative";
+      mybutton[0] .style.position = "relative";
       // alert("900");
     }
   }
